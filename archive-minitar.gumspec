@@ -1,0 +1,15 @@
+Gum::Specification(function($s){
+        $s->name = "archive-minitar";
+        $s->version = "0.0.2";
+        $s->authors = ["Shuhei Tanuma"];
+        $s->email = ["chobieeee@php.net"];
+        $s->homepage = "";
+        $s->summary = "minimum tar library";
+        $s->description = "Description";
+        $s->files = split("\n", `git ls-files`);
+        $s->test_files = split("\n", `git ls-files -- {test,spec,features}/*`);
+        $s->executables = array_map("basename", split("\n", `git ls-files -- bin/*`));
+        $s->require_paths = ["src"];
+
+        $s->addAutoload("Archive", "src");
+});
